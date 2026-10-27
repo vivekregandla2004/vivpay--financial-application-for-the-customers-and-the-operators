@@ -1,0 +1,48 @@
+{
+  "name": "react-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist server.js",
+    "lint": "tsc --noEmit",
+    "test": "tsx tests/unified-user-model.test.ts && tsx tests/auth-portal-routing.test.ts && tsx tests/phase8-persistence-audit.test.ts && tsx tests/staff-provisioning-workflow.test.ts && tsx tests/customer-analytics-dashboard.test.ts && tsx tests/statement-ingestion-pipeline.test.ts && tsx tests/employee-operations-workflow.test.ts && tsx tests/admin-governance-audit.test.ts && tsx tests/financial-insight-engine.test.ts && tsx tests/ask-viv-financial-intelligence.test.ts && tsx tests/unified-parsing-analytics-gap.test.ts && tsx tests/statement-import-id-regression.test.ts && tsx tests/python-analytics-engine.test.ts && tsx tests/customer-account-crud.test.ts",
+    "start": "tsx server.ts"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@supabase/supabase-js": "^2.117.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/cors": "^2.8.19",
+    "@types/multer": "^2.3.0",
+    "@types/papaparse": "^5.5.2",
+    "@types/pdf-parse": "^1.1.5",
+    "@vitejs/plugin-react": "^6.1.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "multer": "^2.4.0",
+    "papaparse": "^5.7.0",
+    "pdf-parse": "^2.4.5",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^8.3.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^7.0.2",
+    "@types/express": "^4.17.21"
+  }
+}

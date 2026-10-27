@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Sky Glass Core Color Tokens */
+    --sky-canvas: #F4F9FF;
+    --sky-surface: #FFFFFF;
+    --sky-primary: #5878FF;
+    --sky-primary-hover: #4665E8;
+    --sky-primary-active: #3653D8;
+    --sky-text-primary: #172B4D;
+    --sky-text-secondary: #64748B;
+    --sky-pale-blue: #EAF3FF;
+    --sky-pale-blue-hover: #DFECFF;
+    --sky-lavender: #EDE9FF;
+    --sky-border: #DCE7F6;
+    --sky-border-glass: rgba(88, 120, 255, 0.14);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F4F9FF;
+    color: #172B4D;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+    color: #172B4D;
+  }
+
+  /* Tabular Numerals for crisp, non-shifting financial amounts */
+  .font-mono, .tnum, [data-tabular-nums] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 1. SKY GLASS MORPHISM UTILITIES                                            */
+/* -------------------------------------------------------------------------- */
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(88, 120, 255, 0.12);
+  box-shadow: 0 4px 20px -2px rgba(88, 120, 255, 0.05);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(88, 120, 255, 0.14);
+  box-shadow: 0 8px 32px 0 rgba(88, 120, 255, 0.08);
+  border-radius: 1.25rem;
+}
+
+.glass-hero-card {
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(88, 120, 255, 0.16);
+  box-shadow: 0 16px 40px -6px rgba(88, 120, 255, 0.10);
+  border-radius: 1.5rem;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(88, 120, 255, 0.12);
+  box-shadow: 0 4px 20px -2px rgba(88, 120, 255, 0.06);
+  border-radius: 1.25rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(88, 120, 255, 0.25);
+  box-shadow: 0 12px 30px -4px rgba(88, 120, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.glass-pill {
+  background: rgba(234, 243, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(88, 120, 255, 0.15);
+  color: #172B4D;
+  border-radius: 9999px;
+}
+
+.glass-overlay {
+  background: rgba(23, 43, 77, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. BENTO GRID LAYOUTS                                                      */
+/* -------------------------------------------------------------------------- */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.bento-card {
+  background: #ffffff;
+  border: 1px solid #DCE7F6;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 10px -1px rgba(23, 43, 77, 0.03), 0 1px 3px 0 rgba(88, 120, 255, 0.04);
+  transition: all 0.22s ease-in-out;
+  overflow: hidden;
+  position: relative;
+}
+
+.bento-card:hover {
+  border-color: #B8D3FC;
+  box-shadow: 0 8px 24px -2px rgba(88, 120, 255, 0.09), 0 2px 6px -1px rgba(23, 43, 77, 0.03);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. FLAT DESIGN 2.0 FOR OPERATIONAL DATA                                    */
+/* -------------------------------------------------------------------------- */
+
+.card-flat-2 {
+  background: #FFFFFF;
+  border: 1px solid #DCE7F6;
+  border-radius: 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(23, 43, 77, 0.03);
+}
+
+.table-flat {
+  background: #FFFFFF;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-flat th {
+  background: #F8FBFF;
+  color: #64748B;
+  font-weight: 600;
+  border-bottom: 1px solid #DCE7F6;
+}
+
+.table-flat td {
+  border-bottom: 1px solid #EEF4FC;
+}
+
+.table-flat tr:hover td {
+  background: #F8FBFF;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. RESTRAINED NEUMORPHISM FOR SECONDARY CONTROLS                            */
+/* -------------------------------------------------------------------------- */
+
+.neu-subtle {
+  background: #FFFFFF;
+  box-shadow: 2px 2px 5px rgba(88, 120, 255, 0.08), -2px -2px 5px #FFFFFF;
+  border: 1px solid #EAF0FA;
+  transition: all 0.2s ease;
+}
+
+.neu-subtle:hover {
+  box-shadow: 3px 3px 8px rgba(88, 120, 255, 0.12), -3px -3px 8px #FFFFFF;
+  border-color: #C6DAFC;
+}
+
+.neu-inset {
+  background: #F4F8FD;
+  box-shadow: inset 1px 1px 3px rgba(88, 120, 255, 0.12), inset -1px -1px 3px #FFFFFF;
+  border: 1px solid #DCE7F6;
+}
+
+.neu-toggle {
+  background: #EEF4FC;
+  padding: 0.25rem;
+  border-radius: 0.875rem;
+  box-shadow: inset 1px 1px 2px rgba(88, 120, 255, 0.1), inset -1px -1px 2px #FFFFFF;
+  border: 1px solid #DCE7F6;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. SKY GLASS BUTTONS & ACTION TOKENS                                       */
+/* -------------------------------------------------------------------------- */
+
+.btn-sky-primary {
+  background-color: #5878FF;
+  color: #FFFFFF;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px 0 rgba(88, 120, 255, 0.35);
+}
+
+.btn-sky-primary:hover {
+  background-color: #4665E8;
+  box-shadow: 0 6px 20px 0 rgba(88, 120, 255, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-sky-primary:active {
+  background-color: #3653D8;
+  transform: translateY(0);
+}
+
+.btn-sky-secondary {
+  background-color: #EAF3FF;
+  color: #172B4D;
+  border: 1px solid #D2E4FC;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-sky-secondary:hover {
+  background-color: #DCEBFF;
+  border-color: #B8D4FB;
+}
+
+/* Backwards-compatibility aliases for existing templates */
+.card-luxury {
+  background: #FFFFFF;
+  border: 1px solid #DCE7F6;
+  box-shadow: 0 2px 12px -2px rgba(23, 43, 77, 0.04), 0 1px 3px -1px rgba(88, 120, 255, 0.03);
+  border-radius: 1.25rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-luxury:hover {
+  border-color: #B8D3FC;
+  box-shadow: 0 8px 24px -2px rgba(88, 120, 255, 0.09), 0 2px 6px -1px rgba(23, 43, 77, 0.03);
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #5878FF 0%, #4665E8 50%, #3653D8 100%);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px 0 rgba(88, 120, 255, 0.35);
+}
+
+.btn-primary-gradient:hover {
+  background: linear-gradient(135deg, #4665E8 0%, #3653D8 100%);
+  box-shadow: 0 8px 22px 0 rgba(88, 120, 255, 0.45);
+  transform: translateY(-1px);
+}
+
+.text-gradient-purple-blue {
+  background: linear-gradient(135deg, #5878FF 0%, #7A5AF8 50%, #4665E8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-vivpay-gradient {
+  background: linear-gradient(135deg, #F4F9FF 0%, #EAF3FF 50%, #EDE9FF 100%);
+}
+
+.bg-vivpay-hero-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(88, 120, 255, 0.12) 0%, rgba(237, 233, 255, 0.18) 35%, transparent 70%);
+}

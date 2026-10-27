@@ -1,0 +1,6 @@
+{
+  "name": "VivPay - Personal Financial Management",
+  "description": "Functional, secure, full-stack personal financial management and customer model platform with statement ingestion and AI financial copilot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
